@@ -1,0 +1,22 @@
+<div class="bg-color-blue">
+    <div class="container">
+        <carousel [cellsToShow]="4" [objectFit]="'cover'" [height]="300">
+            <div class="carousel-cell" *ngFor="let slide of slides">
+                <img src="{{ slide.img }}" class="hover-transition">
+                
+            </div>    
+        </carousel>
+    </div>
+</div>
+
+
+
+
+<!-- <ngx-slick-carousel class="carousel" 
+#slickModal="slick-carousel" 
+[config]="slideConfig" 
+(init)="slickInit()">
+<div ngxSlickItem *ngFor="let slide of slides" class="slide">
+<img src="{{ slide.img }}" alt="" width="100%">
+</div>
+</ngx-slick-carousel> -->

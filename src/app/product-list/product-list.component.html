@@ -1,0 +1,195 @@
+
+<div class="row ptb-20">
+    
+    <div>
+        <div class="restarunts">
+            <div>
+                <span class="product-Strongres">{{product.length}} restaurants</span>
+    
+            </div>
+            <ul class="nav nav-tabs fix-rightTestie" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-bs-toggle="tab" href="#home" role="tab">Relevance
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#time" role="tab">Delivery Time
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#rating" role="tab"> Rating
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#l2h" role="tab"> Cost: Low To High
+                  </a>
+                </li>
+                <li class="nav-items">
+                    <a class="nav-link" data-bs-toggle="tab" href="#h2l" role="tab">Cost: High To Low</a>
+                </li>
+                <li>
+                    <a  class="nav-link" href="">Filters</a>
+                </li>
+              </ul>
+        </div>
+        
+          <div class="tab-content  mt-30">
+            <div class="tab-pane active" id="home" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-3" *ngFor="let pl of product  | sortBy: 'asc':'productName'">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img class="w-100" src="{{ pl.imageUrl }}" alt="" srcset="">
+                                
+                                <span class="promoted" *ngIf="pl.pr?.length">{{ pl.pr }}</span>
+                                <span class="promoted" *ngIf="pl.pr==='Promoted'">{{ pl.pr }}</span>
+                                <span class="promoted ex" *ngIf="pl.pr==='Exclusive'">{{ pl.pr }}</span>
+                            </div>
+                            <div class="mt-14">
+                                <p class="title">{{ pl.productName }}</p>
+                                <p class="content">{{ pl.description }}</p>
+                                <ul class="list-ul">
+                                    <li class="startRating"> 
+                                        <div class="list-span-star-rating">
+                                            <img src="../../assets/img/Star.png" alt="" srcset="">
+                                            <span>{{ pl.starRating }}</span>
+                                        </div></li>
+                                    <li><div>•</div></li>
+                                    <li class="time">{{ pl.deliveryTime }} mins</li>
+                                    <li><div>•</div></li>
+                                    <li class="price">₹{{ pl.price }} for {{ pl.items }}</li>
+                                </ul>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="time" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-3" *ngFor="let pl of product  | sortBy: 'asc':'deliveryTime'">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img class="w-100" src="{{ pl.imageUrl }}" alt="" srcset="">
+                                
+                                <span class="promoted" *ngIf="pl.pr?.length">{{ pl.pr }}</span>
+                                <span class="promoted" *ngIf="pl.pr==='Promoted'">{{ pl.pr }}</span>
+                                <span class="promoted ex" *ngIf="pl.pr==='Exclusive'">{{ pl.pr }}</span>
+                            </div>
+                            <div class="mt-14">
+                                <p class="title">{{ pl.productName }}</p>
+                                <p class="content">{{ pl.description }}</p>
+                                <ul class="list-ul">
+                                    <li class="startRating"> 
+                                        <div class="list-span-star-rating">
+                                            <img src="../../assets/img/Star.png" alt="" srcset="">
+                                            <span>{{ pl.starRating }}</span>
+                                        </div></li>
+                                    <li><div>•</div></li>
+                                    <li class="time">{{ pl.deliveryTime }} mins</li>
+                                    <li><div>•</div></li>
+                                    <li class="price">₹{{ pl.price }} for {{ pl.items }}</li>
+                                </ul>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="rating" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-3" *ngFor="let pl of product  | sortBy: 'desc':'starRating'">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img class="w-100" src="{{ pl.imageUrl }}" alt="" srcset="">
+                                
+                                <span class="promoted" *ngIf="pl.pr?.length">{{ pl.pr }}</span>
+                                <span class="promoted" *ngIf="pl.pr==='Promoted'">{{ pl.pr }}</span>
+                                <span class="promoted ex" *ngIf="pl.pr==='Exclusive'">{{ pl.pr }}</span>
+                            </div>
+                            <div class="mt-14">
+                                <p class="title">{{ pl.productName }}</p>
+                                <p class="content">{{ pl.description }}</p>
+                                <ul class="list-ul">
+                                    <li class="startRating"> 
+                                        <div class="list-span-star-rating">
+                                            <img src="../../assets/img/Star.png" alt="" srcset="">
+                                            <span>{{ pl.starRating }}</span>
+                                        </div></li>
+                                    <li><div>•</div></li>
+                                    <li class="time">{{ pl.deliveryTime }} mins</li>
+                                    <li><div>•</div></li>
+                                    <li class="price">₹{{ pl.price }} for {{ pl.items }}</li>
+                                </ul>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="l2h" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-3" *ngFor="let pl of product  | sortBy: 'asc':'price'">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img class="w-100" src="{{ pl.imageUrl }}" alt="" srcset="">
+                                
+                                <span class="promoted" *ngIf="pl.pr?.length">{{ pl.pr }}</span>
+                                <span class="promoted" *ngIf="pl.pr==='Promoted'">{{ pl.pr }}</span>
+                                <span class="promoted ex" *ngIf="pl.pr==='Exclusive'">{{ pl.pr }}</span>
+                            </div>
+                            <div class="mt-14">
+                                <p class="title">{{ pl.productName }}</p>
+                                <p class="content">{{ pl.description }}</p>
+                                <ul class="list-ul">
+                                    <li class="startRating"> 
+                                        <div class="list-span-star-rating">
+                                            <img src="../../assets/img/Star.png" alt="" srcset="">
+                                            <span>{{ pl.starRating }}</span>
+                                        </div></li>
+                                    <li><div>•</div></li>
+                                    <li class="time">{{ pl.deliveryTime }} mins</li>
+                                    <li><div>•</div></li>
+                                    <li class="price">₹{{ pl.price }} for {{ pl.items }}</li>
+                                </ul>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="h2l" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-3" *ngFor="let pl of product  | sortBy: 'desc':'price'">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img class="w-100" src="{{ pl.imageUrl }}" alt="" srcset="">
+                                
+                                <span class="promoted" *ngIf="pl.pr?.length">{{ pl.pr }}</span>
+                                <span class="promoted" *ngIf="pl.pr==='Promoted'">{{ pl.pr }}</span>
+                                <span class="promoted ex" *ngIf="pl.pr==='Exclusive'">{{ pl.pr }}</span>
+                            </div>
+                            <div class="mt-14">
+                                <p class="title">{{ pl.productName }}</p>
+                                <p class="content">{{ pl.description }}</p>
+                                <ul class="list-ul">
+                                    <li class="startRating"> 
+                                        <div class="list-span-star-rating">
+                                            <img src="../../assets/img/Star.png" alt="" srcset="">
+                                            <span>{{ pl.starRating }}</span>
+                                        </div></li>
+                                    <li><div>•</div></li>
+                                    <li class="time">{{ pl.deliveryTime }} mins</li>
+                                    <li><div>•</div></li>
+                                    <li class="price">₹{{ pl.price }} for {{ pl.items }}</li>
+                                </ul>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+    </div>
+   
+</div>

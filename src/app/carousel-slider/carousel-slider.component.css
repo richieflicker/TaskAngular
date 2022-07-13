@@ -1,0 +1,15 @@
+.hover-transition{
+    transition: transform .5s cubic-bezier(.215,.61,.355,1);
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+    transform: translateZ(0);
+    cursor: pointer;
+}
+.hover-transition:hover{
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
+.bg-color-blue{
+    padding: 30px 20px;
+    background-color: #171a29;
+}

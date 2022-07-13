@@ -1,0 +1,9 @@
+.carousel .carousel-arrow.carousel-arrow-disabled{
+    opacity: 0!important;
+}
+*{
+    font-family: 'Roboto', sans-serif;
+}
+p{
+    margin-bottom: 0;
+}
